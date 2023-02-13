@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import webhook
+from .views import WebHook, PrivacyPolicyView, TermsAndService
 
 urlpatterns = [
-    path("webhook/", webhook, name="webhook"),
+    path('webhook/', WebHook.as_view(), name="webhook"),
+    path('privacy-policy/', PrivacyPolicyView.as_view(), name="privacy-policy"),
+    path('terms-of-service/', TermsAndService.as_view(), name='terms-service'),
     
 ]
